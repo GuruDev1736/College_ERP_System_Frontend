@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Squares from "../components/ui/Squares";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
@@ -6,10 +7,12 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
   const handleLogin = () => {
     // login logic
+    navigate("/dashboard"); // Redirect to the dashboard page
   };
   const handleForgotPassword = () => {
     // forgot password logic
